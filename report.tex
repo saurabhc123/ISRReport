@@ -1,0 +1,220 @@
+%
+% PROJECT: <ETD> Electronic Thesis and Dissertation Initiative
+%   TITLE: LaTeX report template for ETDs in LaTeX
+%  AUTHOR: Neill Kipp, nkipp@vt.edu
+%     URL: http://etd.vt.edu/latex/
+% SAVE AS: etd.tex
+% REVISED: September 6, 1997 [GMc 8/30/10]
+% 
+
+% Instructions: Remove the data from this document and replace it with your own,
+% keeping the style and formatting information intact.  More instructions
+% appear on the Web site listed above.
+\documentclass[12pt]{report}
+
+\setlength{\textwidth}{6.5in}
+\setlength{\textheight}{8.5in}
+\setlength{\evensidemargin}{0in}
+\setlength{\oddsidemargin}{0in}
+\setlength{\topmargin}{0in}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.1in}
+
+% Uncomment for double-spaced document.
+% \renewcommand{\baselinestretch}{2}
+
+% \usepackage{epsf}
+\usepackage{times}
+\usepackage{epsfig}
+\usepackage{wrapfig}
+\usepackage{multicol}
+\usepackage{soul}
+\usepackage{multirow}
+\usepackage{color}
+\usepackage{psfrag}
+\usepackage[linesnumbered,ruled,commentsnumbered]{algorithm2e}
+\usepackage{subfigure}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{url}
+\usepackage{path}
+\usepackage{caption}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{pifont}
+\usepackage{graphicx}
+\usepackage{comment} 
+\usepackage{titlesec}
+\setcounter{secnumdepth}{4}
+\usepackage{epstopdf}
+\DeclareGraphicsExtensions{.eps}
+
+\usepackage{float}
+\usepackage{lipsum}
+\usepackage{pdflscape}
+\usepackage{afterpage}
+\usepackage{pbox}
+\usepackage{fixltx2e}
+\usepackage{tocbibind}
+
+\newcommand{\otoprule}{\midrule[\heavyrulewidth]}
+\newcommand\mvspace[1][10pt]{\rule[\normalbaselineskip]{0pt}{#1}}
+
+\newcommand{\cb}{\textcolor{blue}}
+
+%% font definitions
+%% fixed
+\newenvironment{fixedtt}{\fontfamily{lmtt}\selectfont}{\par}
+\DeclareTextFontCommand{\fixed}{\fixedtt\small}
+\DeclareTextFontCommand{\fixedns}{\fixedtt}     % no resize
+%% sans
+\newenvironment{sanstt}{\fontfamily{phv}\selectfont\small}{\par}
+\DeclareTextFontCommand{\sans}{\sanstt}
+\newenvironment{sanstts}{\fontfamily{phv}\selectfont\smaller}{\par}
+\DeclareTextFontCommand{\sanss}{\sanstts}
+
+\usepackage{hyperref}
+\renewcommand{\sectionautorefname}{\S}
+\renewcommand{\subsectionautorefname}{\S}
+\renewcommand{\subsubsectionautorefname}{\S}
+
+%% source code styles
+\lstset{
+	basicstyle=\footnotesize\ttfamily,
+	keywordstyle=\bfseries,
+	extendedchars=true,
+	breaklines=true,
+	frame=lines,
+	morekeywords={name,kernel,input,output,workdir,tasks}
+}
+
+%% table style
+\renewcommand{\arraystretch}{1.1}
+
+\begin{document}
+
+\thispagestyle{empty}
+\pagenumbering{roman}
+\begin{center}
+
+% TITLE
+{\Large 
+\bf{Interim Report --- CS 5604 Information Storage and Retrieval}\\\vspace{.1in}
+\bf{\smaller CLA Team, Fall 2016}
+}
+
+\vfill
+
+%Hyogi Sim
+
+\vfill
+
+%Thesis submitted to the Faculty of the \\
+%Virginia Polytechnic Institute and State University \\
+%in partial fulfillment of the requirements for the degree of
+
+\vfill
+
+{\bf CLA Team:}\\\vspace{.05in}
+Saurabh Chakravarty\\
+Mahesh Narayanamurthi\\
+Hyogi Sim\\
+\fixed{\{saurabc,maheshnm,hyogi\}@vt.edu}
+
+\vfill
+
+{\bf Project Advisor:}\\\vspace{.05in}
+Prof. Edward A. Fox
+
+\vfill
+
+%%% TODO: we need to add the exact date.
+September 20, 2016 \\
+Blacksburg, Virginia
+
+\vfill
+
+Keywords: Text Classification, Information Retrieval, Information Storage
+%\\
+%Copyright \copyright 2014, Hyogi Sim
+
+\end{center}
+
+\pagebreak
+
+\thispagestyle{empty}
+\begin{center}
+
+{\large
+\bf{Interim Report --- CS 5604 Information Storage and Retrieval}
+}
+
+\vfill
+
+{2016 Fall CLA Team}
+
+\vfill
+
+(ABSTRACT)
+
+\vfill
+
+\end{center}
+
+\input{abstract}
+
+\vfill
+
+% GRANT INFORMATION
+
+%That this work received support from the Southeastern Universities
+%Research Association (SURA) ``Monticello Library Project'' is purely
+%coincidental.
+
+\pagebreak
+
+% Dedication and Acknowledgments are both optional
+%\chapter*{Dedication}
+%\input{dedication}
+% \chapter*{Acknowledgments}
+% \input{ack}
+
+\tableofcontents
+\pagebreak
+
+\listoffigures
+\pagebreak
+
+\listoftables
+\pagebreak
+
+\pagenumbering{arabic}
+\pagestyle{myheadings}
+
+\input{intro}
+\input{related}
+\input{design}
+%\input{prelim}
+\input{plan}
+\input{conclusion}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% If you are using BibTeX, uncomment the following:
+%\thebibliography{refs.bib}
+%
+% Otherwise, uncomment the following:
+%\chapter*{Bibliography}
+%\settocbibname{Bibliography}
+\bibliographystyle{ieeetr}
+\bibliography{refs.bib}
+
+% \appendix
+
+% In LaTeX, each appendix is a "chapter"
+% \chapter{Program Source}
+
+
+\end{document}
+
